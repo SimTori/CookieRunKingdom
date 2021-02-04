@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,27 @@ namespace CookieRunKingdom
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void window_loaded(object sender, RoutedEventArgs e)
+        {
+            List<Process> processesList = Util.GetProcessList("CookieRunKingdom");
+
+            if ( processesList.Count == 0)
+            {
+                MessageBox.Show("실행중인 앱플레이어가 없습니다.");
+                Close();
+                return;
+            }
+
+            for (int i = 0; i < processesList.Count; i++)
+            {
+                Process process = processesList[i];
+                Debug.Print(process.MainWindowTitle);
+                HandleList.Items.Add(process.MainWindowTitle);
+            }
+
+            HandleList.SelectedIndex = 0;
         }
     }
 }

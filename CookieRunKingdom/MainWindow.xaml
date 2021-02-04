@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CookieRunKingdom"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="715.772" Width="990.268" Loaded="window_loaded">
     <Grid>
-        
+        <ComboBox x:Name="HandleList" HorizontalAlignment="Left" VerticalAlignment="Top" Width="686" Margin="125,168,0,0"/>
+
     </Grid>
 </Window>
