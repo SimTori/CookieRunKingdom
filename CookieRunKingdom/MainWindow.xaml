@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="715.772" Width="990.268" Loaded="window_loaded">
     <Grid>
-        <ComboBox x:Name="HandleList" HorizontalAlignment="Left" VerticalAlignment="Top" Width="686" Margin="125,168,0,0"/>
+        <ComboBox x:Name="HandleList" HorizontalAlignment="Left" VerticalAlignment="Top" Width="686" Margin="125,168,0,0" SelectionChanged="HandleList_SelectionChanged"/>
 
     </Grid>
 </Window>

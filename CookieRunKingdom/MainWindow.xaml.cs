@@ -21,6 +21,7 @@ namespace CookieRunKingdom
     /// </summary>
     public partial class MainWindow : Window
     {
+        private IntPtr _hwnd = IntPtr.Zero;
         public MainWindow()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace CookieRunKingdom
 
         private void window_loaded(object sender, RoutedEventArgs e)
         {
-            List<Process> processesList = Util.GetProcessList("CookieRunKingdom");
+            List<Process> processesList = Util.GetProcessList("Nox");
 
             if ( processesList.Count == 0)
             {
@@ -45,6 +46,16 @@ namespace CookieRunKingdom
             }
 
             HandleList.SelectedIndex = 0;
+        }
+
+        private void HandleList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox combo = (ComboBox)sender;
+            string windowTitle = combo.SelectedValue.ToString();
+            Debug.Print(windowTitle);
+
+            _hwnd = Dll.FindWindow(null, windowTitle);
+            Debug.Print(_hwnd);
         }
     }
 }
