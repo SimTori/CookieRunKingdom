@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Rectangle = System.Drawing.Rectangle;
 
 namespace CookieRunKingdom
 {
@@ -22,6 +23,8 @@ namespace CookieRunKingdom
     public partial class MainWindow : Window
     {
         private IntPtr _hwnd = IntPtr.Zero;
+
+        private Rectangle _winRect = new Rectangle();
         public MainWindow()
         {
             InitializeComponent();
@@ -55,7 +58,15 @@ namespace CookieRunKingdom
             Debug.Print(windowTitle);
 
             _hwnd = Dll.FindWindow(null, windowTitle);
-            Debug.Print(_hwnd);
+            Debug.Print(windowTitle + " : " + _hwnd);
+
+            _winRect = Util.GetWindowRect(_hwnd);
+        }
+
+        private void BtnCapture_Click(object sender, RoutedEventArgs e)
+        {
+            underCapture();
+            imgMatchingTest();
         }
     }
 }

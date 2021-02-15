@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CookieRunKingdom"
         mc:Ignorable="d"
-        Title="MainWindow" Height="715.772" Width="990.268" Loaded="window_loaded">
+        Title="MainWindow" Height="483.772" Width="720.268" Loaded="window_loaded">
     <Grid>
-        <ComboBox x:Name="HandleList" HorizontalAlignment="Left" VerticalAlignment="Top" Width="686" Margin="125,168,0,0" SelectionChanged="HandleList_SelectionChanged"/>
+        <ComboBox x:Name="HandleList" HorizontalAlignment="Left" VerticalAlignment="Top" Width="559" Margin="10,10,0,0" SelectionChanged="HandleList_SelectionChanged"/>
+        <Image x:Name="Capture" HorizontalAlignment="Left" Height="400" Margin="10,37,0,0" VerticalAlignment="Top" Width="686"/>
+        <Button x:Name="BtnCapture" Content="Button" HorizontalAlignment="Left" Margin="574,10,0,0" VerticalAlignment="Top" Width="122" Height="22" Click="BtnCapture_Click"/>
 
     </Grid>
 </Window>
